@@ -1,0 +1,82 @@
+$marker-size-ratio: calc(154 / 96);
+$marker-width: 29px;
+$marker-height: floor($marker-width * $marker-size-ratio);
+$gmap-control-size: 28px;
+$gmap-control-margin: 10px;
+$gmap-control-padding: 2px;
+
+.leaflet-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .marker {
+    font-family: $base-font-family;
+  }
+
+  &.leaflet-control-hide {
+    .leaflet-control-container {
+      display: none;
+    }
+  }
+
+  .leaflet-popup {
+    font-family: get-value-by-direction((Roboto, Verdana, Geneva, sans-serif), (IRANYekan, Tahoma, Verdana, Geneva, sans-serif))
+  }
+
+  .map-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .leaflet-bar a {
+      display: block;
+    }
+
+  }
+
+  &.dragging {
+    .marker {
+      @include scale(0.7);
+    }
+  }
+
+  .get-my-location {
+    background: $white;
+    border-radius: 2px;
+    width: $gmap-control-size;
+    height: $gmap-control-size;
+    //border: 2px solid red;
+    margin: auto $gmap-control-margin;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    $gmap-icon-width: $gmap-control-size - (2 * $gmap-control-padding);
+
+    &.hidden {
+      display: none;
+    }
+
+    img {
+      width: $gmap-icon-width;
+      height: auto;
+      margin: $gmap-control-padding;
+      cursor: pointer;
+    }
+  }
+
+  &.frame {
+
+    * {
+      pointer-events: none;
+    }
+
+    .map-wrapper {
+      background-color: transparent;
+    }
+
+    .leaflet-pane .leaflet-tile-pane {
+      display: none;
+    }
+  }
+}

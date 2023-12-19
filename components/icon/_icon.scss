@@ -1,0 +1,153 @@
+$icon-circle-width: 24px;
+$icon-circle-height: 24px;
+$icon-font-size: 24px;
+$icon-circle-font-size: 20px;
+
+@mixin icon-style($color) {
+  color: $color;
+}
+
+@mixin icon-circle-style($color, $text-color: $white) {
+  width: $icon-circle-width;
+  height: $icon-circle-height;
+  font-size: $icon-circle-font-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color;
+  border-radius: 50%;
+  color: $text-color;
+
+  @include media-query-above() {
+    &:hover {
+      background-color: #{$color}c9;
+      transition: all $transition-duration-short;
+    }
+
+    &.loading {
+      &:hover {
+        background-color: $color;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.icon {
+  font-family: 'icon-font';
+  font-weight: normal;
+  font-style: normal;
+  /* Preferred icon size */
+  font-size: $icon-font-size;
+  line-height: 1;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Highlight blue shadow on click icon */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &.primary {
+    @include icon-style($color-primary);
+  }
+
+  &.secondary {
+    @include icon-style($color-secondary);
+  }
+
+  &.danger {
+    @include icon-style($red);
+  }
+
+  &.info {
+    @include icon-style($green);
+  }
+
+  &.white {
+    @include icon-style($white);
+  }
+
+  &.blue {
+    @include icon-style($blue);
+  }
+
+  &.black {
+    @include icon-style($black);
+  }
+
+  &.grey {
+    @include icon-style($light-gray);
+  }
+
+  &.green {
+    @include icon-style($green);
+  }
+
+  &.circle {
+    width: $icon-circle-width;
+    height: $icon-circle-height;
+    font-size: $icon-circle-font-size !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $light-gray;
+    color: $white;
+    border-radius: 50%;
+  }
+
+  &.circle-primary {
+    @include icon-circle-style($color-primary);
+  }
+
+  &.circle-secondary {
+    @include icon-circle-style($color-secondary);
+  }
+
+  &.circle-danger {
+    @include icon-circle-style($deep-orange);
+  }
+
+  &.circle-info {
+    @include icon-circle-style($green);
+  }
+
+  &.circle-white {
+    @include icon-circle-style($white, $color-primary);
+  }
+
+  &.circle-blue {
+    @include icon-circle-style($blue);
+  }
+
+  &.circle-green {
+    @include icon-circle-style($green);
+  }
+
+  &.circle-black {
+    @include icon-circle-style($black);
+  }
+
+  &.flip-rtl {
+    transform: get-value-by-direction(scaleX(1), scaleX(-1));
+  }
+
+  &.flip {
+    transform: get-value-by-direction(scaleX(-1), scaleX(1));
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &.icon-input {
+    color: $light-gray;
+  }
+}

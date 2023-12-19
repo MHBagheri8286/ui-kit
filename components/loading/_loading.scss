@@ -1,0 +1,18 @@
+.loading-bar {
+  position: relative;
+  top: 30px;
+  text-align: center;
+
+  &.absolute-loading-bar {
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+
+  @include media-query-small() {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}

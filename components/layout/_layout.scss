@@ -1,0 +1,12 @@
+.layout-container {
+  height: 100%;
+  width: 100%;
+
+  &.default {
+    gap: 15px !important;
+
+    @include media-query-below {
+      gap: 10px !important;
+    }
+  }
+}
