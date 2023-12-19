@@ -1,0 +1,72 @@
+$toast-padding: 10px 15px;
+$toast-margin: 15px;
+$toast-font-size: 15px;
+$toast-border-radius: $border-radius;
+$toast-border-color: $border-color;
+
+@mixin toast-style($color) {
+  &.active {
+    .border-bottom {
+      width: 0;
+      border-bottom: 7px solid $color;
+      transition: width 5000ms ease-in-out;
+    }
+  }
+
+  .toast-desc-title {
+    color: $color;
+  }
+
+  .icon {
+    color: $color;
+  }
+}
+
+.toast-message {
+  margin: $toast-margin;
+  overflow: hidden;
+  align-items: flex-end;
+  font-size: $toast-font-size;
+  line-height: 2;
+  display: flex;
+  border-radius: $toast-border-radius;
+  color: $dark-gray;
+  background: $light-grey;
+  box-shadow: $box-shadow;
+
+  flex-direction: column;
+
+  .content {
+    padding: $toast-padding;
+    width: 100%;
+
+    .toast-desc {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.4;
+      margin-#{$float}: 15px;
+    }
+
+  }
+
+  .border-bottom {
+    width: 100%;
+  }
+
+  .icon {
+    font-size: 42px;
+  }
+
+  &.type-error {
+    @include toast-style($color-error);
+  }
+
+  &.type-success {
+    @include toast-style($color-success);
+  }
+
+  &.type-warning {
+    @include toast-style($color-warning);
+  }
+}
+

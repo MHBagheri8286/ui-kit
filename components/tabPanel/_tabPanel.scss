@@ -1,0 +1,88 @@
+.tab-panel {
+  border-radius: $border-radius-panel;
+  position: relative;
+  box-shadow: 0 15px 32px -10px rgba(108, 117, 125, .1), 0 4px 11px -3px rgba(0, 0, 0, .25);
+
+  .tab-navs {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .tab-navs-items {
+      display: table-cell;
+      padding: 13px;
+      background-color: $color-primary;
+      color: $white;
+      font-size: 1.1rem;
+      transition: all 150ms linear;
+      cursor: pointer;
+      user-select: none;
+
+      .title {
+        padding-#{$float}: 10px;
+      }
+
+      &.active-tab {
+        background-color: $white;
+        color: $color-primary;
+      }
+
+      &:first-child {
+        border-top-#{$float}-radius: 8px;
+      }
+
+      &:last-child {
+        border-top-#{$opposite-float}-radius: 8px;
+      }
+
+      @include media-query-small() {
+        padding: 10px;
+        font-size: 0.95rem;
+
+        &>.flex {
+          flex-direction: column;
+        }
+
+        .icon {
+          display: none;
+        }
+
+        .title {
+          padding-#{$float}: 0px;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    background-color: $white;
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  @include media-query-small() {
+    margin: 0 -15px;
+
+    box-shadow: none;
+
+    .tab-navs {
+      .tab-navs-items {
+        &:first-child {
+          border-top-#{$float}-radius: 0px;
+        }
+
+        &:last-child {
+          border-top-#{$opposite-float}-radius: 0px;
+        }
+      }
+    }
+
+    .tab-content {
+      border-radius: 0px;
+      padding: 25px;
+    }
+  }
+}

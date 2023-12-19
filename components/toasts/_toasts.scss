@@ -1,0 +1,50 @@
+.toasts {
+  position: fixed;
+  z-index: $z-index-notification;
+  bottom: 0;
+  #{$opposite-float}: 0;
+  max-width: 400px;
+
+  @include media-query-small() {
+    #{$opposite-float}: 50%;
+    width: 95%;
+    transform: get-value-by-direction(translateX(50%), translateX(-50%));
+  }
+}
+
+.toasts-slide-side-enter {
+  transform: get-value-by-direction(translate3d(calc(100% + 15px), 0, 0), translate3d(calc(-100% - 15px), 0, 0));
+
+  &.toasts-slide-side-enter-active {
+    transition: transform $transition-duration-long $transition-effect-default;
+    transform: translate3d(0, 0, 0);
+    @include scale(1);
+  }
+}
+
+.toasts-slide-side-exit {
+  transform: translate3d(0, 0, 0);
+
+  &.toasts-slide-side-exit-active {
+    transition: transform $transition-duration-long $transition-effect-default;
+    transform: get-value-by-direction(translate3d(calc(100% + 15px), 0, 0), translate3d(calc(-100% - 15px), 0, 0));
+  }
+}
+
+.toasts-slide-up-enter {
+  transform: translateY(calc(100% + 15px));
+
+  &.toasts-slide-up-enter-active {
+    transform: translateY(0);
+    transition: transform $transition-duration-long $transition-effect;
+  }
+}
+
+.toasts-slide-up-exit {
+  transform: translateY(0);
+
+  &.toasts-slide-up-exit-active {
+    transform: translateY(calc(100% + 15px));
+    transition: transform $transition-duration-long $transition-effect;
+  }
+}

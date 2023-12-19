@@ -1,0 +1,89 @@
+.text-input {
+  margin: 0;
+
+  .form-input-section {
+    display: flex;
+
+    .form-control {
+      &.no-padding-x {
+        padding-#{$float}: 0;
+      }
+
+      &.no-padding-left {
+        padding-left: 0;
+      }
+    }
+
+    .icon-position,
+    .icon-font,
+    .icon-file {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      min-width: 24px;
+      min-height: 24px;
+      margin-#{$opposite-float}: 5px;
+      margin-#{$float}: 5px;
+    }
+
+    .prefix,
+    .postfix {
+      display: flex;
+      align-items: center;
+      line-height: 40px;
+    }
+
+    .prefix {
+      padding-#{$float}: 8px;
+      border-top-#{$float}-radius: $border-radius;
+      border-bottom-#{$float}-radius: $border-radius;
+    }
+
+    .postfix {
+      padding-#{$opposite-float}: 8px;
+      border-top-#{$opposite-float}-radius: $border-radius;
+      border-bottom-#{$opposite-float}-radius: $border-radius;
+    }
+
+    &.dir-ltr {
+      .prefix {
+        padding-right: 0;
+        padding-left: 8px;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+
+      .postfix {
+        padding-left: 0;
+        padding-right: 8px;
+      }
+    }
+  }
+
+  .btn {
+    width: auto;
+    padding: 0 8px;
+  }
+
+  input[type="email"] {
+    font-family: $base-en-font-family;
+  }
+
+  input[type="email"]::-webkit-input-placeholder {
+    font-family: $base-font-family;
+  }
+
+  input[type="email"]:-moz-placeholder {
+    /* Firefox 18- */
+    font-family: $base-font-family;
+  }
+
+  input[type="email"]::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: $base-font-family;
+  }
+
+  input[type="email"]:-ms-input-placeholder {
+    font-family: $base-font-family;
+  }
+}

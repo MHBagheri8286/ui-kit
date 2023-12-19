@@ -1,0 +1,13 @@
+.value-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px 0;
+
+  .title {
+    margin-top: 10px;
+    color: $color-desc;
+    font-size: $font-size-medium;
+  }
+}

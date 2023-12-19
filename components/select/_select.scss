@@ -1,0 +1,22 @@
+.select-input {
+    &.dir-ltr {
+        select {
+            direction: ltr;
+        }
+    }
+
+    &.dir-rtl {
+        select {
+            direction: rtl;
+        }
+    }
+
+    .form-container {
+        .form-control {
+            cursor: pointer;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            padding-#{$opposite-float}: 25px;
+        }
+    }
+}

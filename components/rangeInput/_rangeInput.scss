@@ -1,0 +1,38 @@
+.range-input {
+  .form-range {
+    display: flex;
+    align-items: center;
+
+    .range-btn {
+      line-height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 4px;
+      padding: 3px;
+      height: 26px;
+      width: 26px;
+
+      @include media-query-small() {
+        width: 30px;
+        height: 30px;
+      }
+
+      .icon {
+        font-size: 20px;
+
+        @include media-query-small() {
+          font-size: $font-size-xxlarge;
+        }
+      }
+    }
+
+    .range-value {
+      width: 50px;
+      font-size: $font-size-large;
+      line-height: 1rem;
+      text-align: center;
+    }
+  }
+}

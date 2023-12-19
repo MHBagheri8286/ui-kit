@@ -1,0 +1,138 @@
+$pl-modal-bg: transparentize($white, .9);
+$pl-wrapper-size: 30vh;
+$pl-circular-size: $pl-wrapper-size;
+$pl-circular-border-color: $color-primary;
+$pl-wrapper-min-size: 250px;
+
+.preloader {
+  display: flex;
+  will-change: tranform;
+  pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  z-index: $z-index-actionsheet;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: visible;
+
+  .pl-root {
+    background: $pl-modal-bg;
+    backdrop-filter: blur(6px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .pl-container {
+    text-align: center;
+    position: relative;
+    transition: opacity $transition-duration-short $transition-effect;
+
+    .pl-wrapper {
+      min-width: $pl-wrapper-min-size;
+      min-height: $pl-wrapper-min-size;
+      margin: auto;
+      position: relative;
+
+      @include media-query-below() {
+        min-width: 200px;
+        min-height: 200px;
+      }
+    }
+
+    .pl-circular {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      border-radius: 50%;
+      background: $silver;
+
+    }
+
+    .pl-circular-border {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      margin: 0px;
+      border: 6px solid $light-grey;
+      border-top-color: transparent;
+      animation-name: rotate;
+      border-radius: 50%;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      background: linear-gradient(to left, #e6e6e600 10%, #e6e6e661 25%, #e6e6e661 40%, $light-grey 80%);
+
+      .pl-circular-gap {
+        z-index: 0;
+        background: $light-grey;
+        border-radius: 50%;
+        margin: 0px;
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
+      }
+
+      span {
+        font-size: 38px;
+        position: relative;
+        width: 38px;
+        height: 38px;
+        color: $color-primary;
+
+        &::before {
+          position: absolute;
+          transform: rotate(503deg);
+          transform-origin: 142% 123%;
+          transform: 0;
+          animation: rotate;
+        }
+
+        @include media-query-below() {
+          font-size: 31px;
+        }
+      }
+
+    }
+
+    .pl-text {
+      position: absolute;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      top: 50%;
+      left: 0;
+      right: 0;
+      color: $color-primary;
+      @include translate3d(0, -50%, 0);
+
+      @include media-query-below() {
+        font-size: 12px;
+      }
+    }
+
+    .pl-title {
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    .pl-message {
+      font-weight: 300;
+    }
+  }
+}

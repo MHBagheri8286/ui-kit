@@ -1,0 +1,49 @@
+.time-picker {
+  .time-picker-content {
+    border: 0;
+    position: fixed;
+    z-index: $z-index-navbar;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-top: 5px;
+    padding: 0px 15px;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+    font-size: $font-size-medium;
+
+    .time-picker-item {
+      text-align: center;
+      padding: 0px 10px;
+
+      .time-picker-item-text {
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        width: 60px;
+        height: $form-control-height;
+        padding: $form-group-padding;
+        text-align: center;
+      }
+
+      .time-picker-seperator {
+        font-weight: 800;
+      }
+
+      .icon {
+        color: $color-primary;
+        display: flex;
+        padding: 8px 0px;
+        justify-content: center;
+      }
+    }
+  }
+
+  .time-picker-loading {
+    height: 48px;
+    padding: 8px;
+    display: flex;
+    margin-right: auto;
+  }
+}

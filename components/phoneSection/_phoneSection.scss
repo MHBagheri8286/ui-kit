@@ -1,0 +1,70 @@
+.phone-section {
+  flex-grow: 1;
+
+  .phone-section-items,
+  .tel-section-items {
+    display: flex;
+    direction: ltr;
+
+    fieldset {
+      display: none;
+    }
+
+    .international-code {
+      margin: 0px;
+      max-width: 60px;
+      min-width: 60px;
+
+      .form-container {
+        border-top-#{$float}-radius: 0px;
+        border-bottom-#{$float}-radius: 0px;
+      }
+    }
+
+    .text-input {
+      margin: 0px;
+
+      .form-container {
+
+        .form-control {
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+        }
+      }
+
+      &:last-child {
+        width: auto;
+        flex-grow: 1;
+      }
+    }
+
+    .form-icon {
+      display: none;
+    }
+  }
+
+  .phone-splitter {
+    font-size: 20px;
+    background-color: $white;
+    color: $black;
+    border-right: 1px solid $border-color;
+
+    &.splitter-disable {
+      background-color: $crom;
+    }
+  }
+
+  .drop-down {
+
+    .list-wrapper {
+      .list-item {
+        white-space: nowrap;
+      }
+    }
+  }
+
+
+  .dialog {
+    direction: get-value-by-direction(ltr, rtl);
+  }
+}

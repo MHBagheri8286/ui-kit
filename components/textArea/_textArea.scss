@@ -1,0 +1,16 @@
+.text-area {
+  margin: 0;
+
+  .form-container {
+    height: 100%;
+
+    .form-control {
+      resize: none;
+      height: 100%;
+    }
+  }
+
+  &.has-error {
+    height: auto;
+  }
+}

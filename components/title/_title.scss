@@ -1,0 +1,29 @@
+.title {
+  position: relative;
+
+  &.content-title {
+    line-height: $line-height;
+    margin-bottom: 30px;
+
+    &.border-center {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &.border-none {
+      &::before {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -13px;
+      width: 90px;
+      border-bottom: 3px solid $color-primary;
+      border-radius: $border-radius;
+    }
+  }
+}

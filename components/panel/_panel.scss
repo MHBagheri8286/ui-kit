@@ -1,0 +1,106 @@
+@mixin color-style($color) {
+  .panel-head-item {
+    color: $color;
+  }
+}
+
+.panel {
+  box-shadow: $shadow-default;
+  border-radius: $border-radius-panel;
+  background-color: $white;
+  position: relative;
+
+  .panel-body {
+    padding: 20px;
+  }
+
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-medium;
+    padding: 12px 20px;
+    border-radius: $border-radius-panel $border-radius-panel 0 0;
+
+    .panel-head-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .seperate {
+    background-color: $light-grey;
+  }
+
+  .back-btn {
+    background-color: $silver;
+    color: $light-silver;
+    border-radius: 50%;
+    margin-#{$opposite-float}: 7px;
+
+    &:hover {
+      color: $white;
+      background-color: $deep-grey;
+    }
+  }
+
+  &.color-primary {
+    @include color-style($color-primary);
+  }
+
+  &.color-secondary {
+    @include color-style($color-secondary);
+  }
+
+  &.color-danger {
+    @include color-style($color-danger);
+  }
+
+  &.color-green {
+    @include color-style($green);
+  }
+
+  &.color-gold {
+    @include color-style($gold);
+  }
+
+  &.color-teal {
+    @include color-style($teal);
+  }
+
+  &.color-blue {
+    @include color-style($blue);
+  }
+
+  &.color-white {
+    @include color-style($white);
+  }
+
+  &.mini {
+    .panel-body {
+      padding: 0px 20px;
+
+      @include media-query-small() {
+        padding: 0px 15px;
+      }
+    }
+  }
+
+  &.full {
+    margin: 0;
+    padding: 0;
+
+    .panel-head {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include media-query-small() {
+    border: 0px;
+
+    .panel-body,
+    .panel-head {
+      padding: 15px;
+    }
+  }
+}

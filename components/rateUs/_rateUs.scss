@@ -1,0 +1,15 @@
+.rate-us {
+  .rate-us-title {
+    font-size: $font-size-xmedium;
+  }
+
+  .rate-us-items-container {
+    direction: ltr;
+    margin-bottom: 30px;
+
+    .icon {
+      margin: 0px 10px;
+      color: $color-primary;
+    }
+  }
+}

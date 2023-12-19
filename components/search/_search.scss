@@ -1,0 +1,48 @@
+.search {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  border-radius: 23px;
+  border: 1px solid #949494;
+  overflow: hidden;
+  height: $btn-small-height;
+  background-color: $white;
+  font-size: $font-size-base;
+
+  .input-search {
+    flex-grow: 1;
+
+    #search::-webkit-search-cancel-button {
+      position: relative;
+      -webkit-appearance: none;
+    }
+
+    .form-group {
+      margin: 0;
+
+      .form-container {
+        .form-fieldset {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .divider {
+    height: 25px;
+  }
+
+  .icon {
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  .icon-search {
+    padding-#{$opposite-float}: 10px;
+    color: $blue;
+  }
+
+  .icon-close {
+    color: $light-gray;
+  }
+}

@@ -1,0 +1,91 @@
+.upcoming-month {
+  line-height: $line-height;
+
+  .upcoming-month-event {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    padding: 20px;
+    color: $white;
+    font-size: $font-size-large;
+    font-weight: 300;
+
+    &:hover {
+      .upcoming-month-event-bg-image {
+        transform: scale(1.05);
+        transition: transform 1s ease 0s;
+      }
+    }
+
+    .upcoming-month-event-bg-image {
+      position: absolute;
+      top: 0;
+      #{$float}: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      border-radius: 15px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+
+      .upcoming-month-event-bg-color {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+
+    .upcoming-month-event-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+
+      .upcoming-month-event-content {
+        display: flex;
+        align-items: center;
+
+        .upcoming-month-event-content-item {
+          position: relative;
+          height: 100%;
+          width: 150px;
+        }
+
+        .event-image {
+          width: 75px;
+          height: 75px;
+          border-radius: 50%;
+          overflow: hidden;
+          position: absolute;
+          bottom: 0;
+          box-shadow: rgba(0, 0, 0, 0.16) 6px 0px 20px;
+        }
+
+        .event-number {
+          font-size: $font-size-xxlarge;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .col-1-auto:first-child {
+    .upcoming-month-event {
+      width: 290px;
+
+      .upcoming-month-event-bg-color {
+        background: linear-gradient(281deg, rgb(206, 79, 85) 0%, rgb(78, 78, 137) 100%) center center / cover no-repeat;
+      }
+    }
+  }
+
+  @include media-query-small() {
+    .upcoming-month-event {
+      width: 100% !important;
+    }
+  }
+}

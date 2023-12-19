@@ -1,0 +1,123 @@
+$modal-background-color: #00000060;
+$modal-transition-enter-duration: $transition-duration-long;
+$modal-transition-leave-duration: $transition-duration-short;
+$modal-transition-effect: $transition-effect-default;
+
+.modal {
+  display: flex;
+  will-change: tranform;
+  pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  z-index: $z-index-actionsheet;
+
+  &.pointer-event {
+    pointer-events: visible;
+  }
+
+  &>span {
+    max-width: 100%;
+    max-height: 100%;
+
+    @include media-query-small() {
+      width: 100%;
+    }
+  }
+
+  &.full {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+  }
+
+  &.inline {
+    position: absolute;
+    border-radius: $border-radius;
+    box-shadow: $shadow-default;
+    z-index: $z-index-modal-inline;
+    margin: 5px 0 10px;
+  }
+
+  .modal-root {
+    display: block;
+    opacity: 0;
+    background: $modal-background-color;
+    backdrop-filter: blur(6px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: opacity $transition-duration-short $transition-effect;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  @include media-query-small() {
+    &.inline {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &.full {
+      .modal-container {
+        width: 100%;
+        max-height: none;
+      }
+
+      &.full-content {
+        padding: 0px;
+
+        .modal-container {
+          height: 100%;
+
+          .dialog {
+            border-radius: 0px;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fade-modal-enter {
+  opacity: 0;
+
+  &.fade-modal-enter-active {
+    transition: opacity $transition-enter-duration $transition-effect;
+    opacity: 1;
+  }
+}
+
+.fade-modal-exit {
+  opacity: 1;
+
+  &.fade-modal-exit-active {
+    transition: opacity 0ms $transition-effect;
+    opacity: 0;
+  }
+}
+
+.bottom {
+  bottom: 45px;
+}
+
+.left {
+  left: 0px;
+}
+
+.right {
+  right: 0px;
+}

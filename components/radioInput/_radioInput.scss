@@ -1,0 +1,55 @@
+.radio-input {
+  display: flex;
+  align-items: center;
+  justify-content: inherit;
+
+  .radio {
+    top: 0;
+    #{$float}: 0;
+    width: 20px;
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    z-index: 1;
+    position: absolute;
+  }
+
+  .form-radio {
+    display: flex;
+    position: relative;
+
+    &.margin {
+      margin-#{$opposite-float}: 4px;
+    }
+
+    @include media-query-small() {
+      margin-#{$opposite-float}: 2px;
+    }
+
+    .radiovgIcon-root {
+      fill: currentColor;
+      width: 1em;
+      height: 1em;
+      color: darken($color-primary, $btn-border-darken-ratio);
+      display: inline-block;
+      font-size: 1.5rem;
+      transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .radiovgIcon-dot {
+      left: 0;
+      position: absolute;
+      transform: scale(0);
+      transition: transform 150ms cubic-bezier(0.4, 0, 1, 1) 0ms;
+
+      &.active {
+        transform: scale(1);
+        transition: transform 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+      }
+    }
+  }
+}
