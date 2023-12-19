@@ -1,0 +1,188 @@
+.map-widget {
+  position: relative;
+  overflow: hidden;
+
+  .modal {
+    .modal-root {
+      backdrop-filter: blur(0px);
+    }
+  }
+
+  .map {
+    width: 100%;
+    height: 100%;
+    outline: none !important;
+  }
+
+  .content-section {
+    position: absolute;
+    top: 200px;
+    #{$float}: 80px;
+    width: 300px;
+    height: calc(100% - 250px);
+    z-index: 2;
+
+    .data-source-tags {
+      margin-bottom: 30px;
+
+      .data-source-tags-items {
+        padding: 0px;
+
+        li {
+          list-style-type: none;
+          padding-top: 10px;
+          padding-bottom: 10px;
+
+          .data-source-tags-item {
+            padding: 0px 10px;
+            cursor: pointer;
+            background-color: $white;
+            border-radius: 2*$border-radius;
+            box-shadow: 0px 0px 0px 5px rgba(171, 171, 171, .28);
+            transition: $transition-duration-short $transition-effect;
+
+            &:hover {
+              background-color: $light-grey;
+            }
+
+            &.selected {
+              background-color: $color-primary;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .marker-groups {
+      width: 100%;
+      padding: 8px 20px;
+      overflow-y: auto;
+      background-color: $white;
+      border-radius: 2*$border-radius;
+      box-shadow: 0px 0px 0px 5px rgba(171, 171, 171, .28);
+
+      .marker-groups-content {
+        margin: 0px;
+        padding: 0px;
+        font-weight: normal;
+        backdrop-filter: blur(0px);
+
+        .marker-groups-content-item {
+          list-style-type: none;
+          padding: 15px 0px;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #aeaeae52;
+          }
+
+          .count {
+            min-width: 20px;
+            height: 20px;
+            padding: 0 6px;
+            color: $white;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            white-space: nowrap;
+            text-align: center;
+            background: $color-primary;
+            border-radius: 10px;
+            box-shadow: 0 0 0 1px $white;
+          }
+        }
+      }
+    }
+  }
+
+  .marker-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    #{$float}: 0;
+    width: 30%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: $white;
+    padding: 0px;
+    margin: 0px;
+
+    .marker-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      list-style-type: none;
+      transition: transform $transition-duration-long $transition-effect;
+
+      .marker-item-content {
+        /* IE and Edge */
+        -ms-overflow-style: none;
+        /* Firefox */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .cover,
+      .image-gallery-widget {
+        height: 380px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: -webkit-gradient(linear, left top, left bottom, from($black), color-stop(rgba(0, 0, 0, .333)), to($black));
+          background: -o-linear-gradient(top, $black, rgba(0, 0, 0, .333), $black);
+          background: linear-gradient(180deg, $black, rgba(0, 0, 0, .333), $black);
+          content: "";
+          pointer-events: none;
+          opacity: calc(0.3);
+          z-index: 3;
+        }
+      }
+    }
+
+    .controls-container {
+      height: 60px;
+      width: 100%;
+      top: 170px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      z-index: 13;
+      direction: ltr;
+
+      .icon {
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 50%;
+        margin: 0 25px;
+        cursor: pointer;
+        transition: $transition-duration-medium $transition-effect;
+
+        &:hover {
+          background-color: $color-primary;
+          border-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  @include media-query-below() {
+    .content-section {
+      display: none;
+    }
+  }
+}

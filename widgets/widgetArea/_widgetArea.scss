@@ -1,0 +1,24 @@
+.widget-area {
+  display: flex;
+  flex-direction: column;
+
+  &.flip-x {
+    &::before {
+      content: '';
+      transform: scaleX(-1);
+    }
+  }
+
+  &.flip-y {
+    &::before {
+      content: '';
+      transform: scaleY(-1);
+    }
+  }
+
+  .widget-area-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}

@@ -1,0 +1,11 @@
+.file-widget {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  @include gap(15px);
+  margin-top: 30px;
+
+  a {
+    margin-bottom: 15px;
+  }
+}

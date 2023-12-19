@@ -1,0 +1,21 @@
+.widget-header {
+  position: relative;
+  margin-bottom: 60px;
+
+  .sub-title {
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+
+  &.dark-mode {
+    color: $white;
+  }
+
+  .more-info-btn {
+    min-width: 170px;
+  }
+
+  .description {
+    margin: 20px 0px 0px;
+  }
+}
