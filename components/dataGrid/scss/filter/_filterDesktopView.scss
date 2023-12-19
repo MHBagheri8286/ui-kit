@@ -1,0 +1,25 @@
+.filter-desktop-view {
+
+    $min-width-content: 180px;
+    $header-border: 1px solid $silver;
+    $gap: 15px;
+    $filter-active-item: #00a69321;
+
+    min-width: $min-width-content;
+    display: grid;
+    grid-auto-flow: row;
+    padding: $gap;
+    gap: $gap;
+
+    .filter-header {
+        border-bottom: $header-border;
+        padding-bottom: $gap;
+    }
+
+    .btn-container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: $gap;
+    }
+}

@@ -1,0 +1,50 @@
+.filter-mobile-content {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    .filter-item {
+        padding: 10px 0px;
+        font-weight: 500;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $light-grey;
+        }
+
+        &.filtered {
+            .caption {
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 5px;
+                    height: 5px;
+                    #{$opposite-float}: -10px;
+                    border-radius: 50%;
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+}
+
+.filter-item-contents {
+    .filter-item-content {
+        padding: 10px 0px;
+        font-weight: 500;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $light-grey;
+        }
+    }
+}
+
+.filter-mobile-view-footer {
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.14),
+        0 -2px 2px rgba(0, 0, 0, 0.05);
+
+    .caption {
+        font-weight: 700;
+    }
+}

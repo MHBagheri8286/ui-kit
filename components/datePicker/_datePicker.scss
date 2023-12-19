@@ -1,0 +1,267 @@
+$dp-cell-size: 40px;
+$dp-cell-padding: 5px;
+$dp-row-margin: 10px;
+
+.date-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  header {
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+    color: $white;
+    padding: 9px 10px;
+
+    .select-container {
+      flex-grow: 1;
+      text-align: center;
+      line-height: get-value-by-direction(2.5, 1.6);
+      padding-top: get-value-by-direction(1px, 0);
+
+      .select-item {
+        padding: 0px 4px;
+
+        &:hover {
+          cursor: pointer;
+          color: $orange;
+        }
+      }
+    }
+
+    .select-arrow {
+      width: 21px;
+      height: 21px;
+      text-align: center;
+      font-size: 25px;
+      line-height: 21px;
+      cursor: pointer;
+      user-select: none;
+      border: 0;
+      background-color: transparent;
+      color: $white;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+
+    .change-picker-type {
+      font-size: $font-size-base;
+      padding: get-value-by-direction(7px 2px, 2px);
+      margin-#{$float}: 10px;
+    }
+  }
+
+  .picker-wrapper {
+    background: $white;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  .date-picker-content-item {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    .calender {
+      width: unset;
+
+      .calender-content {
+        width: unset;
+      }
+    }
+  }
+
+  .date-show {
+    display: none;
+    margin: $dp-row-margin;
+  }
+
+  .year-content {
+    list-style: none;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 300px;
+    height: 320px;
+
+    .year-item {
+      cursor: pointer;
+      text-align: center;
+      padding: 8px 10px;
+      color: $dark-gray;
+
+      &:hover {
+        color: $dark-gray;
+        background-color: $crom;
+      }
+    }
+
+    .year-item-active {
+      background-color: $deep-orange;
+      color: $white;
+    }
+  }
+
+  .month-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 320px;
+
+    .month-item {
+      cursor: pointer;
+      width: 33.333%;
+      text-align: center;
+      line-height: 4;
+      padding: 8px 10px;
+      color: $dark-gray;
+
+      &:hover {
+        color: $dark-gray;
+        background-color: $crom;
+      }
+    }
+
+    .month-item-active {
+      color: $deep-orange;
+    }
+  }
+
+  .time-select {
+    display: flex;
+    border-bottom: 1px solid $border-color;
+
+    >div {
+      display: inline-block;
+      flex: 1;
+      padding: $dp-cell-padding;
+    }
+
+    select {
+      width: 50%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    label {
+      display: inline-block;
+      vertical-align: middle;
+      margin: auto 10px;
+      font-weight: lighter;
+    }
+
+    .min-select {
+      text-align: start;
+    }
+
+    .hour-select {
+      text-align: end;
+    }
+  }
+
+  table {
+    margin: $dp-row-margin;
+    table-layout: fixed;
+    // border: 1px solid $border-color;
+  }
+
+  th,
+  td {
+    text-align: center;
+  }
+
+  th {
+    padding: $dp-cell-padding;
+    min-width: $dp-cell-size;
+    color: $dark-gray;
+    font-size: $font-size-base;
+    font-weight: 300;
+    // border-bottom: 1px solid $border-color;
+  }
+
+  td {
+    cursor: default;
+    height: $dp-cell-size;
+    width: $dp-cell-size;
+  }
+
+  i {
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    font-size: $font-size-medium;
+    width: $dp-cell-size;
+    height: $dp-cell-size;
+    line-height: $dp-cell-size;
+    border-radius: 50%;
+    border: 1px solid $white;
+    transition: background $transition-duration-short $transition-effect-default;
+    background: $white;
+
+    &:hover {
+      border-color: $color-primary;
+      background-color: $white;
+    }
+  }
+
+  .today {
+    i {
+      color: $blue;
+    }
+  }
+
+  .selected {
+    i {
+      background: $color-primary !important;
+      color: $white;
+    }
+  }
+
+  .date-picker-btn {
+    margin: $dp-row-margin;
+    display: none;
+
+    @include media-query-below() {
+      display: block;
+    }
+
+    @include media-query-medium() {
+      display: block;
+    }
+
+    .btn {
+      width: auto;
+    }
+  }
+
+  .gregorian-date-picker {
+    direction: ltr;
+
+    i {
+      font-family: "roboto";
+    }
+
+    header .change-picker-type {
+      margin-left: 10px;
+      margin-right: 0px;
+    }
+
+    .month-select a {
+      transform: scaleX(-1);
+    }
+  }
+
+  .persian-range-picker {
+    header .change-picker-type {
+      margin-right: 10px;
+      margin-left: 0px;
+    }
+  }
+}

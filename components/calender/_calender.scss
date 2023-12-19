@@ -1,0 +1,54 @@
+.calender {
+  width: 100%;
+  position: relative;
+
+  .calender-header {
+    font-size: $font-size-medium;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+
+  .calender-content {
+    position: relative;
+    width: 100%;
+    table-layout: fixed;
+
+    .header-calender {
+      .week-days-name {
+        color: $gray;
+      }
+
+      th {
+        text-align: center;
+        font-size: $font-size-medium;
+        min-width: 40px;
+        height: 40px;
+
+        i {
+          font-style: normal;
+          min-width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .content {}
+
+    td {
+      text-align: center;
+      font-size: $font-size-medium;
+      min-width: 40px;
+      height: 40px;
+
+      &:empty {
+        display: none;
+      }
+
+      i {
+        font-style: normal;
+        min-width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+.data-grid {
+    .data-grid-content {
+        .data-grid-table {
+            .data-grid-content-row {
+                background-color: $background-color-table;
+                overflow: hidden;
+
+                &.green {
+                    border-#{$float}: 6px solid #09866b;
+                }
+
+                &.yellow {
+                    border-#{$float}: 6px solid #664d03;
+
+                }
+
+                &.red {
+                    border-#{$float}: 6px solid #ff0018;
+                }
+
+                &.blue {
+                    border-#{$float}: 6px solid #084298;
+                }
+
+                td {
+                    .title {
+                        display: none;
+                    }
+                }
+            }
+
+            .button-edit-remove-group {
+                .btn-container {
+                    display: grid;
+                    grid-auto-flow: column;
+                    grid-auto-columns: 1fr;
+                    gap: 10px;
+
+                    .btn {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.border-separate {
+        .data-grid-table-section {
+            .data-grid-content {
+                .data-grid-table {
+                    .data-grid-content-row {
+                        td {
+                            border: $data-grid-border;
+                            border-radius: $border-radius-panel;
+
+                            .value {
+                                word-break: break-word;
+                            }
+
+                            &:first-child:not(:last-child) {
+                                border-top-#{$opposite-float}-radius: 0px;
+                                border-bottom-#{$opposite-float}-radius: 0px;
+                                border-#{$opposite-float}: 0px;
+                            }
+
+                            &:not(:first-child):not(:last-child) {
+                                border-radius: 0px;
+                                border-left: 0px;
+                                border-right: 0px;
+                            }
+
+                            &:last-child:not(:first-child) {
+                                border-top-#{$float}-radius: 0px;
+                                border-bottom-#{$float}-radius: 0px;
+                                border-#{$float}: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.border-collapse {
+        .data-grid-content {
+            .data-grid-table {
+                .data-grid-content-row {
+                    border-top: $data-grid-border;
+                }
+            }
+        }
+
+        &.no-borders {
+            .data-grid-content {
+                .data-grid-table {
+                    border: 0px;
+
+                    .data-grid-content-row {
+                        td {
+                            border: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.show-borders {
+            .data-grid-content {
+                .data-grid-table {
+                    border-top: 0px;
+
+                    .data-grid-content-row {
+                        &:not(:last-child) {
+                            td {
+                                border-top: 0px;
+                                border-bottom: 0px;
+                            }
+                        }
+
+                        &:last-child {
+                            td {
+                                border-top: 0px;
+                            }
+                        }
+
+                        td {
+                            &.record-not-found {
+                                border-top: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-query-small() {
+        &.border-separate {
+            .data-grid-table {
+                .data-grid-content-row {
+
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+
+                    td {
+                        width: 100% !important;
+                        min-width: 100% !important;
+                        max-width: 100% !important;
+                        border-radius: 0px !important;
+                        border: 0px !important;
+                        display: flex;
+                        direction: get-value-by-direction(ltr, rtl);
+
+                        .title,
+                        .value {
+                            width: 50%;
+                        }
+
+                        .title {
+                            display: block;
+                        }
+
+                        &.button-edit-remove-group {
+                            padding: 0px;
+                            padding-top: 10px;
+                            background-color: $white;
+
+                            .btn-container {
+                                width: 100%;
+                                gap: 2px;
+
+                                .btn {
+                                    width: 100%;
+                                    height: 45px;
+                                    border-radius: 0px;
+                                    background-color: $light-grey;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

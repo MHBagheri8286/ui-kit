@@ -1,0 +1,25 @@
+.contact {
+  &.horizontal-align {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px -10px;
+
+    .adjust-icon {
+      padding: 0px 10px;
+    }
+  }
+
+  .adjust-icon {
+    direction: ltr;
+    margin-top: 10px;
+
+    .label {
+      .icon {
+        color: $color-primary;
+        margin-left: 0px;
+        margin-right: 7px;
+      }
+    }
+  }
+}

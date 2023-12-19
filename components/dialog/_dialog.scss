@@ -1,0 +1,72 @@
+$dialog-background-color: $white;
+$dialog-header-padding: 10px;
+$dialog-padding: 10px;
+$dialog-border-radius: $border-radius;
+
+.dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius * 4;
+  overflow: hidden;
+  touch-action: none;
+  z-index: $z-index-dialog;
+  background: $dialog-background-color;
+  min-width: $layout-small-min;
+  max-width: $layout-large-max;
+  max-height: 75vh;
+  box-shadow: $box-shadow;
+  height: 100%;
+
+  .dialog-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-dialog-header;
+    padding: 12px 2* $dialog-padding;
+    min-height: 52px;
+    z-index: $z-index-content;
+
+    .title {
+      font-size: $font-size-medium;
+    }
+
+    .icon-close-btn {
+      padding: 0;
+
+      .icon {
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 50%;
+        color: $dark-gray;
+
+        &:hover {
+          background-color: $crom;
+          transition: background-color 0.5s;
+        }
+      }
+    }
+  }
+
+  .dialog-content-wrapper {
+    background-color: $white;
+    overflow: auto;
+    padding: 2* $dialog-padding;
+  }
+
+  .dialog-footer-wrapper {
+    padding: 12px 2* $dialog-padding;
+  }
+
+  @include media-query-small() {
+    max-height: unset;
+
+    .dialog-header-wrapper {
+      padding: 12px 15px;
+    }
+
+    .dialog-content-wrapper {
+      padding: 15px;
+    }
+  }
+}

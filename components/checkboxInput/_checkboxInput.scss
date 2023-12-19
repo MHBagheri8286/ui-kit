@@ -1,0 +1,68 @@
+$width-checkbox: 24px;
+$height-checkbox: 24px;
+
+.checkbox-input {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  height: $height-checkbox;
+  color: lighten($text-color-default, 12%);
+
+  label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: none;
+    pointer-events: auto;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    font-size: $font-size-medium;
+    margin-#{$float}: 7px;
+  }
+
+  .checkbox {
+    top: 0;
+    width: $width-checkbox;
+    cursor: pointer;
+    height: $height-checkbox;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    z-index: 1;
+    position: absolute;
+  }
+
+  .form-checkbox {
+    display: flex;
+    position: relative;
+
+    .checkboxSvgIcon-root {
+      fill: currentColor;
+      // width: 1.2em;
+      // height: 1.2em;
+      display: inline-block;
+      color: $dark-gray;
+      //font-size: 1.5rem;
+      transition: fill 100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .checkboxSvgIcon-check {
+      position: absolute;
+      color: $color-primary;
+      transform: scale(0);
+      transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+  }
+
+  .checkbox-checked {
+    color: $color-primary;
+
+    .checkboxSvgIcon-check {
+      transform: scale(1);
+      transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+  }
+}

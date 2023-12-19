@@ -1,0 +1,109 @@
+$background-hiding-columns: #fafafa;
+
+.data-grid {
+    .data-grid-content {
+        .data-grid-content-container {
+            .data-grid-table {
+                .data-grid-hiding-columns {
+                    background-color: $background-hiding-columns;
+
+                    .column {
+                        padding: 0px;
+
+                        .hiding-columns-container {
+
+                            .hiding-columns-item {
+                                flex-wrap: wrap;
+                                padding: 15px;
+
+                                &:not(:first-child) {
+                                    padding-top: 15px;
+                                }
+
+                                .title {
+                                    margin-#{$opposite-float}: 5px;
+                                }
+
+                                .value {
+                                    font-weight: bold;
+                                }
+                            }
+
+                            .button-edit-remove-group {
+                                padding: 0px;
+                                display: flex;
+                                width: 100% !important;
+                                min-width: 100% !important;
+                                max-width: 100% !important;
+                                background-color: $data-grid-border-color;
+                                border-top: $data-grid-border;
+
+                                .btn-container {
+                                    width: 100%;
+                                    gap: 2px;
+
+                                    .btn {
+                                        width: 100%;
+                                        height: 45px;
+                                        border-radius: 0px;
+                                        background-color: $background-hiding-columns;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.no-borders {
+        .data-grid-content {
+            .data-grid-content-container {
+                .data-grid-table {
+                    .data-grid-hiding-columns {
+                        .column {
+                            border: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-query-small() {
+        &.border-separate {
+            .data-grid-content {
+                .data-grid-content-container {
+                    .data-grid-table {
+                        .data-grid-hiding-columns {
+                            display: flex;
+                            border-radius: $border-radius-panel;
+                            border: 1px solid $light-grey;
+                            margin-bottom: 20px;
+                            overflow: hidden;
+
+                            .column {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.border-collapse {
+            .data-grid-content {
+                .data-grid-content-container {
+                    .data-grid-table {
+                        .data-grid-hiding-columns {
+                            .hiding-columns-container {
+                                border-top: $data-grid-border;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,143 @@
+$alert-padding: 5px 0px;
+$alert-margin: 0;
+$alert-font-size: $font-size-medium;
+$alert-lighten-ratio: 50%;
+
+@mixin alert-contain($color, $background-color, $border-color) {
+  color: $color;
+  padding: 10px;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background-color: $background-color;
+}
+
+@mixin alert-none($color) {
+  color: $color;
+  padding: 10px 0px;
+}
+
+@mixin alert-outline($color) {
+  color: $color;
+  padding: 10px;
+  border-radius: $border-radius;
+  background-color: transparent;
+  border: 1px solid;
+
+  .alert-container {
+    .alert-title {
+      font-size: $font-size-medium;
+      font-weight: bold;
+      margin-bottom: 5px;
+
+      @include media-query-small {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.alert {
+  display: flex;
+  line-height: $line-height;
+  padding: $alert-padding;
+  margin: $alert-margin;
+  font-size: $alert-font-size;
+
+  .alert-container {
+    flex-grow: 1;
+    line-height: 24px;
+
+    .alert-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .alert-black {
+    color: $text-color-default;
+  }
+
+  .alert-icon {
+    margin-#{$opposite-float}: 5px;
+    font-size: $font-size-xxlarge;
+  }
+
+  a {
+    color: $blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  *:first-child {
+    margin-top: 0
+  }
+
+  *:last-child {
+    margin-bottom: 0
+  }
+}
+
+.alert-contain {
+
+  &.alert-error,
+  &.alert-danger {
+    @include alert-contain(#842029, #f8d7da, #f5c2c7);
+  }
+
+  &.alert-warn,
+  &.alert-warning {
+    @include alert-contain(#663803, #ffe5cd, #ffd3b5);
+  }
+
+  &.alert-information {
+    @include alert-contain(#055160, #cff4fc, #b6effb);
+  }
+
+  &.alert-success {
+    @include alert-contain(#0f5132, #d1e7dd, #badbcc);
+  }
+}
+
+.alert-outline {
+
+  &.alert-error,
+  &.alert-danger {
+    @include alert-outline($color-error);
+  }
+
+  &.alert-warn,
+  &.alert-warning {
+    @include alert-outline($color-warning);
+  }
+
+  &.alert-information {
+    @include alert-outline($color-information);
+  }
+
+  &.alert-success {
+    @include alert-outline($color-success);
+  }
+}
+
+.alert-none {
+
+  &.alert-error,
+  &.alert-danger {
+    @include alert-none($color-error);
+  }
+
+  &.alert-warn,
+  &.alert-warning {
+    @include alert-none($color-warning);
+  }
+
+  &.alert-information {
+    @include alert-none($color-information);
+  }
+
+  &.alert-success {
+    @include alert-none($color-success);
+  }
+}

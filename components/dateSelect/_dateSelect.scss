@@ -1,0 +1,32 @@
+.date-select {
+  .date-select-items {
+    display: flex;
+
+    .form-group {
+      margin: 0;
+      flex-grow: 1;
+      border-#{$opposite-float}: 1px solid $border-color;
+
+      &:last-child {
+        border-#{$opposite-float}: 0;
+      }
+
+      &.form-focused {
+        .form-control {
+          background-color: lighten($blue, 40%);
+        }
+
+      }
+
+      .form-container {
+        border-radius: 0;
+        padding: 0;
+
+        .form-fieldset {
+          border: 0;
+
+        }
+      }
+    }
+  }
+}

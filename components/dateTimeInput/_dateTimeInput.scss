@@ -1,0 +1,26 @@
+.date-time-input {
+  input {
+    direction: ltr;
+    text-align: #{$float};
+    margin-#{$opposite-float}: 25px;
+  }
+
+  .form-container {
+    .icon-close-circle {
+      #{$float}: auto !important;
+      #{$opposite-float}: 6px;
+      color: $grey;
+      cursor: pointer;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  .picker-btn {
+    position: absolute;
+    top: 4px;
+    #{$opposite-float}: 4px;
+  }
+}

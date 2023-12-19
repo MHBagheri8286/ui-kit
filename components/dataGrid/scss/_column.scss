@@ -1,0 +1,79 @@
+.data-grid {
+
+    &.border-collapse {
+        .data-grid-table-section {
+            .data-grid-table {
+                .column {
+                    position: relative;
+
+                    &.border {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            height: 45%;
+                            top: 50%;
+                            background: $data-grid-border-color;
+                            #{$opposite-float}: 0;
+                            transform: translateY(-50%);
+                            width: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .data-grid-table-section {
+        .data-grid-table {
+            .column {
+
+                &.trim {
+                    .tooltip {
+
+                        .tooltip-trigger,
+                        .title,
+                        .value {
+                            text-align: $float;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+
+                &.hide {
+                    width: 0px !important;
+                    min-width: 0px !important;
+                    max-width: 0px !important;
+                    padding: 0px;
+                    overflow: hidden;
+                }
+
+                .status-cell {
+
+                    &.green {
+                        color: $green;
+                    }
+
+                    &.yellow {
+                        color: #664d03;
+                    }
+
+                    &.red {
+                        color: #ff0018;
+                    }
+
+                    &.blue {
+                        color: #084298;
+                    }
+
+                    @include gap(5px);
+
+                    .icon {
+                        font-size: $font-size-large;
+                    }
+                }
+            }
+        }
+    }
+}
