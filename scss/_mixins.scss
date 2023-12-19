@@ -1,0 +1,208 @@
+@mixin inline-animation($duration) {
+  //A sample for using @content & unique-id() function in sass.
+  $name: inline-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+}
+
+@mixin rtl($prop, $value, $rtl-value) {
+  @if ($direction==ltr) {
+    #{$prop}: $value;
+  }
+
+  @else {
+    #{$prop}: $rtl-value;
+  }
+}
+
+@mixin rotate($degrees) {
+  transform: rotate($degrees);
+}
+
+@mixin scale($x, $y: $x) {
+  transform: scale($x, $y);
+}
+
+@mixin translate($x, $y: $x) {
+  transform: translate($x, $y);
+}
+
+@mixin skew($x, $y: $x) {
+  -webkit-backface-visibility: hidden;
+  transform: skew($x, $y);
+}
+
+@mixin translate3d($x, $y: $x, $z: $y) {
+  transform: translate3d($x, $y, $z);
+}
+
+@mixin filter($filter) {
+  filter: $filter;
+}
+
+@mixin hide-scroll-bar {
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin gap($gap, $horizontal: $horizontal) {
+
+  @if $horizontal {
+    margin: 0 calc((-1 * ($gap)) / 2);
+
+    &>* {
+      margin: 0 calc($gap / 2);
+    }
+  }
+
+  @else {
+    margin: calc((-1 * ($gap)) / 2) 0;
+
+    &>* {
+      margin: calc($gap / 2) 0;
+    }
+  }
+}
+
+@mixin line-clamp($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin animation-rotate($duration, $effect: $transition-effect-default) {
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-name: rotate;
+  animation-timing-function: $effect;
+}
+
+// Media queries
+@mixin media-query($min-width, $max-width: 0) {
+  @if ($min-width > 0 and $max-width > 0) {
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  }
+
+  @else if ($min-width > 0) {
+    @media screen and (min-width: $min-width) {
+      @content;
+    }
+  }
+
+  @else {
+    @media screen and (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+
+@mixin media-query-small() {
+  @include media-query(0, $layout-small-max) {
+    @content;
+  }
+}
+
+@mixin media-query-medium() {
+  @include media-query($layout-medium-min, $layout-medium-max) {
+    @content;
+  }
+}
+
+@mixin media-query-large() {
+  @include media-query($layout-large-min, $layout-large-max) {
+    @content;
+  }
+}
+
+@mixin media-query-xlarge() {
+  @include media-query($layout-xlarge-min) {
+    @content;
+  }
+}
+
+@mixin media-query-below() {
+  @include media-query(0, $layout-medium-max) {
+    @content;
+  }
+}
+
+@mixin media-query-mega() {
+  @include media-query(0, $layout-large-max) {
+    @content;
+  }
+}
+
+@mixin media-query-above() {
+  @include media-query($layout-large-min) {
+    @content;
+  }
+}
+
+@mixin media-query-big() {
+  @include media-query($layout-xlarge-min) {
+    @content;
+  }
+}
+
+@mixin media-query-landscape() {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-query-portrait() {
+  @media screen and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin media-query-print() {
+  @media print {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    @content;
+  }
+}
+
+@mixin get-padding-top-default() {
+  @media screen and (min-width: $layout-small-min) and (max-width: $layout-small-max) {
+    padding-top: $padding-top-small-default;
+  }
+
+  @media screen and (min-width: $layout-medium-min) and (max-width: $layout-medium-max) {
+    padding-top: $padding-top-medium-default;
+  }
+
+  @media screen and (min-width: $layout-large-min) {
+    padding-top: $padding-top-default;
+  }
+}
+
+@mixin get-padding-bottom-default() {
+  @media screen and (min-width: $layout-small-min) and (max-width: $layout-small-max) {
+    padding-bottom: $padding-top-small-default;
+  }
+
+  @media screen and (min-width: $layout-medium-min) and (max-width: $layout-medium-max) {
+    padding-bottom: $padding-top-medium-default;
+  }
+
+  @media screen and (min-width: $layout-large-min) {
+    padding-bottom: $padding-top-default;
+  }
+}

@@ -1,0 +1,1308 @@
+$margin: 5px;
+
+@mixin margin($space) {
+  margin: $space * $margin !important;
+}
+
+@mixin margin-x($space) {
+  margin-left: $space * $margin !important;
+  margin-right: $space * $margin !important;
+}
+
+@mixin margin-y($space) {
+  margin-top: $space * $margin !important;
+  margin-bottom: $space * $margin !important;
+}
+
+@mixin margin-right($space) {
+  margin-right: $space * $margin !important;
+}
+
+@mixin margin-bottom($space) {
+  margin-bottom: $space * $margin !important;
+}
+
+@mixin margin-top($space) {
+  margin-top: $space * $margin !important;
+}
+
+@mixin margin-right($space) {
+  margin-right: $space * $margin !important;
+}
+
+@mixin margin-left($space) {
+  margin-left: $space * $margin !important;
+}
+
+@mixin margin-float($space) {
+  margin-#{$float}: $space * $margin !important;
+}
+
+@mixin margin-opposite-float($space) {
+  margin-#{$opposite-float}: $space * $margin !important;
+}
+
+.m {
+  @include margin(4)
+}
+
+.m-0 {
+  @include margin(0)
+}
+
+.m-1 {
+  @include margin(1)
+}
+
+.m-2 {
+  @include margin(2)
+}
+
+.m-3 {
+  @include margin(3)
+}
+
+.m-4 {
+  @include margin(4)
+}
+
+.m-5 {
+  @include margin(5)
+}
+
+.m-6 {
+  @include margin(6)
+}
+
+.m-xl {
+  @include media-query-xlarge() {
+    @include margin(4);
+  }
+}
+
+.m-xl-0 {
+  @include media-query-xlarge() {
+    @include margin(0);
+  }
+}
+
+.m-xl-1 {
+  @include media-query-xlarge() {
+    @include margin(1);
+  }
+}
+
+.m-xl-2 {
+  @include media-query-xlarge() {
+    @include margin(2);
+  }
+}
+
+.m-xl-3 {
+  @include media-query-xlarge() {
+    @include margin(3);
+  }
+}
+
+.m-xl-4 {
+  @include media-query-xlarge() {
+    @include margin(4);
+  }
+}
+
+.m-xl-5 {
+  @include media-query-xlarge() {
+    @include margin(5);
+  }
+}
+
+.m-xl-6 {
+  @include media-query-xlarge() {
+    @include margin(6);
+  }
+}
+
+.m-lg {
+  @include media-query-large() {
+    @include margin(4);
+  }
+}
+
+.m-lg-0 {
+  @include media-query-large() {
+    @include margin(0);
+  }
+}
+
+.m-lg-1 {
+  @include media-query-large() {
+    @include margin(1);
+  }
+}
+
+.m-lg-2 {
+  @include media-query-large() {
+    @include margin(2);
+  }
+}
+
+.m-lg-3 {
+  @include media-query-large() {
+    @include margin(3);
+  }
+}
+
+.m-lg-4 {
+  @include media-query-large() {
+    @include margin(4);
+  }
+}
+
+.m-lg-5 {
+  @include media-query-large() {
+    @include margin(5);
+  }
+}
+
+.m-lg-6 {
+  @include media-query-large() {
+    @include margin(6);
+  }
+}
+
+.m-md {
+  @include media-query-medium() {
+    @include margin(4);
+  }
+}
+
+.m-md-0 {
+  @include media-query-medium() {
+    @include margin(0);
+  }
+}
+
+.m-md-1 {
+  @include media-query-medium() {
+    @include margin(1);
+  }
+}
+
+.m-md-2 {
+  @include media-query-medium() {
+    @include margin(2);
+  }
+}
+
+.m-md-3 {
+  @include media-query-medium() {
+    @include margin(3);
+  }
+}
+
+.m-md-4 {
+  @include media-query-medium() {
+    @include margin(4);
+  }
+}
+
+.m-md-5 {
+  @include media-query-medium() {
+    @include margin(5);
+  }
+}
+
+.m-md-6 {
+  @include media-query-medium() {
+    @include margin(6);
+  }
+}
+
+.m-sm {
+  @include media-query-small() {
+    @include margin(4);
+  }
+}
+
+.m-sm-0 {
+  @include media-query-small() {
+    @include margin(0);
+  }
+}
+
+.m-sm-1 {
+  @include media-query-small() {
+    @include margin(1);
+  }
+}
+
+.m-sm-2 {
+  @include media-query-small() {
+    @include margin(2);
+  }
+}
+
+.m-sm-3 {
+  @include media-query-small() {
+    @include margin(3);
+  }
+}
+
+.m-sm-4 {
+  @include media-query-small() {
+    @include margin(4);
+  }
+}
+
+.m-sm-5 {
+  @include media-query-small() {
+    @include margin(5);
+  }
+}
+
+.m-sm-6 {
+  @include media-query-small() {
+    @include margin(6);
+  }
+}
+
+.mx {
+  @include margin-x(4)
+}
+
+.mx-0 {
+  @include margin-x(0)
+}
+
+.mx-1 {
+  @include margin-x(1)
+}
+
+.mx-2 {
+  @include margin-x(2)
+}
+
+.mx-3 {
+  @include margin-x(3)
+}
+
+.mx-4 {
+  @include margin-x(4)
+}
+
+.mx-5 {
+  @include margin-x(5)
+}
+
+.mx-6 {
+  @include margin-x(6)
+}
+
+.mx-xl {
+  @include media-query-xlarge() {
+    @include margin-x(4);
+  }
+}
+
+.mx-xl-0 {
+  @include media-query-xlarge() {
+    @include margin-x(0);
+  }
+}
+
+.mx-xl-1 {
+  @include media-query-xlarge() {
+    @include margin-x(1);
+  }
+}
+
+.mx-xl-2 {
+  @include media-query-xlarge() {
+    @include margin-x(2);
+  }
+}
+
+.mx-xl-3 {
+  @include media-query-xlarge() {
+    @include margin-x(3);
+  }
+}
+
+.mx-xl-4 {
+  @include media-query-xlarge() {
+    @include margin-x(4);
+  }
+}
+
+.mx-xl-5 {
+  @include media-query-xlarge() {
+    @include margin-x(5);
+  }
+}
+
+.mx-xl-6 {
+  @include media-query-xlarge() {
+    @include margin-x(6);
+  }
+}
+
+.mx-lg {
+  @include media-query-large() {
+    @include margin-x(4);
+  }
+}
+
+.mx-lg-0 {
+  @include media-query-large() {
+    @include margin-x(0);
+  }
+}
+
+.mx-lg-1 {
+  @include media-query-large() {
+    @include margin-x(1);
+  }
+}
+
+.mx-lg-2 {
+  @include media-query-large() {
+    @include margin-x(2);
+  }
+}
+
+.mx-lg-3 {
+  @include media-query-large() {
+    @include margin-x(3);
+  }
+}
+
+.mx-lg-4 {
+  @include media-query-large() {
+    @include margin-x(4);
+  }
+}
+
+.mx-lg-5 {
+  @include media-query-large() {
+    @include margin-x(5);
+  }
+}
+
+.mx-lg-6 {
+  @include media-query-large() {
+    @include margin-x(6);
+  }
+}
+
+.mx-md {
+  @include media-query-medium() {
+    @include margin-x(4);
+  }
+}
+
+.mx-md-0 {
+  @include media-query-medium() {
+    @include margin-x(0);
+  }
+}
+
+.mx-md-1 {
+  @include media-query-medium() {
+    @include margin-x(1);
+  }
+}
+
+.mx-md-2 {
+  @include media-query-medium() {
+    @include margin-x(2);
+  }
+}
+
+.mx-md-3 {
+  @include media-query-medium() {
+    @include margin-x(3);
+  }
+}
+
+.mx-md-4 {
+  @include media-query-medium() {
+    @include margin-x(4);
+  }
+}
+
+.mx-md-5 {
+  @include media-query-medium() {
+    @include margin-x(5);
+  }
+}
+
+.mx-md-6 {
+  @include media-query-medium() {
+    @include margin-x(6);
+  }
+}
+
+.mx-sm {
+  @include media-query-small() {
+    @include margin-x(4);
+  }
+}
+
+.mx-sm-0 {
+  @include media-query-small() {
+    @include margin-x(0);
+  }
+}
+
+.mx-sm-1 {
+  @include media-query-small() {
+    @include margin-x(1);
+  }
+}
+
+.mx-sm-2 {
+  @include media-query-small() {
+    @include margin-x(2);
+  }
+}
+
+.mx-sm-3 {
+  @include media-query-small() {
+    @include margin-x(3);
+  }
+}
+
+.mx-sm-4 {
+  @include media-query-small() {
+    @include margin-x(4);
+  }
+}
+
+.mx-sm-5 {
+  @include media-query-small() {
+    @include margin-x(5);
+  }
+}
+
+.mx-sm-6 {
+  @include media-query-small() {
+    @include margin-x(6);
+  }
+}
+
+.my {
+  @include margin-y(4)
+}
+
+.my-0 {
+  @include margin-y(0)
+}
+
+.my-1 {
+  @include margin-y(1)
+}
+
+.my-2 {
+  @include margin-y(2)
+}
+
+.my-3 {
+  @include margin-y(3)
+}
+
+.my-4 {
+  @include margin-y(4)
+}
+
+.my-5 {
+  @include margin-y(5)
+}
+
+.my-6 {
+  @include margin-y(6)
+}
+
+
+.my-xl {
+  @include media-query-xlarge() {
+    @include margin-y(4);
+  }
+}
+
+.my-xl-0 {
+  @include media-query-xlarge() {
+    @include margin-y(0);
+  }
+}
+
+.my-xl-1 {
+  @include media-query-xlarge() {
+    @include margin-y(1);
+  }
+}
+
+.my-xl-2 {
+  @include media-query-xlarge() {
+    @include margin-y(2);
+  }
+}
+
+.my-xl-3 {
+  @include media-query-xlarge() {
+    @include margin-y(3);
+  }
+}
+
+.my-xl-4 {
+  @include media-query-xlarge() {
+    @include margin-y(4);
+  }
+}
+
+.my-xl-5 {
+  @include media-query-xlarge() {
+    @include margin-y(5);
+  }
+}
+
+.my-xl-6 {
+  @include media-query-xlarge() {
+    @include margin-y(6);
+  }
+}
+
+.my-lg {
+  @include media-query-large() {
+    @include margin-y(4);
+  }
+}
+
+.my-lg-0 {
+  @include media-query-large() {
+    @include margin-y(0);
+  }
+}
+
+.my-lg-1 {
+  @include media-query-large() {
+    @include margin-y(1);
+  }
+}
+
+.my-lg-2 {
+  @include media-query-large() {
+    @include margin-y(2);
+  }
+}
+
+.my-lg-3 {
+  @include media-query-large() {
+    @include margin-y(3);
+  }
+}
+
+.my-lg-4 {
+  @include media-query-large() {
+    @include margin-y(4);
+  }
+}
+
+.my-lg-5 {
+  @include media-query-large() {
+    @include margin-y(5);
+  }
+}
+
+.my-lg-6 {
+  @include media-query-large() {
+    @include margin-y(6);
+  }
+}
+
+.my-md {
+  @include media-query-medium() {
+    @include margin-y(4);
+  }
+}
+
+.my-md-0 {
+  @include media-query-medium() {
+    @include margin-y(0);
+  }
+}
+
+.my-md-1 {
+  @include media-query-medium() {
+    @include margin-y(1);
+  }
+}
+
+.my-md-2 {
+  @include media-query-medium() {
+    @include margin-y(2);
+  }
+}
+
+.my-md-3 {
+  @include media-query-medium() {
+    @include margin-y(3);
+  }
+}
+
+.my-md-4 {
+  @include media-query-medium() {
+    @include margin-y(4);
+  }
+}
+
+.my-md-5 {
+  @include media-query-medium() {
+    @include margin-y(5);
+  }
+}
+
+.my-md-6 {
+  @include media-query-medium() {
+    @include margin-y(6);
+  }
+}
+
+.my-sm {
+  @include media-query-small() {
+    @include margin-y(4);
+  }
+}
+
+.my-sm-0 {
+  @include media-query-small() {
+    @include margin-y(0);
+  }
+}
+
+.my-sm-1 {
+  @include media-query-small() {
+    @include margin-y(1);
+  }
+}
+
+.my-sm-2 {
+  @include media-query-small() {
+    @include margin-y(2);
+  }
+}
+
+.my-sm-3 {
+  @include media-query-small() {
+    @include margin-y(3);
+  }
+}
+
+.my-sm-4 {
+  @include media-query-small() {
+    @include margin-y(4);
+  }
+}
+
+.my-sm-5 {
+  @include media-query-small() {
+    @include margin-y(5);
+  }
+}
+
+.my-sm-6 {
+  @include media-query-small() {
+    @include margin-y(6);
+  }
+}
+
+.mr {
+  @include margin-right(4)
+}
+
+.mr-0 {
+  @include margin-right(0)
+}
+
+.mr-1 {
+  @include margin-right(1)
+}
+
+.mr-2 {
+  @include margin-right(2)
+}
+
+.mr-3 {
+  @include margin-right(3)
+}
+
+.mr-4 {
+  @include margin-right(4)
+}
+
+.mr-5 {
+  @include margin-right(5)
+}
+
+.mr-6 {
+  @include margin-right(6)
+}
+
+.mr-7 {
+  @include margin-right(7)
+}
+
+.mr-8 {
+  @include margin-right(8)
+}
+
+.mr-9 {
+  @include margin-right(9)
+}
+
+.mr-10 {
+  @include margin-right(10)
+}
+
+.mb {
+  @include margin-bottom(4)
+}
+
+.mb-0 {
+  @include margin-bottom(0)
+}
+
+.mb-1 {
+  @include margin-bottom(1)
+}
+
+.mb-2 {
+  @include margin-bottom(2)
+}
+
+.mb-3 {
+  @include margin-bottom(3)
+}
+
+.mb-4 {
+  @include margin-bottom(4)
+}
+
+.mb-5 {
+  @include margin-bottom(5)
+}
+
+.mb-6 {
+  @include margin-bottom(6)
+}
+
+.mb-7 {
+  @include margin-bottom(7)
+}
+
+.mb-8 {
+  @include margin-bottom(8)
+}
+
+.mb-9 {
+  @include margin-bottom(9)
+}
+
+.mb-10 {
+  @include margin-bottom(10)
+}
+
+.mb-xl {
+  @include media-query-xlarge() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-xl-0 {
+  @include media-query-xlarge() {
+    @include margin-bottom(0);
+  }
+}
+
+.mb-xl-1 {
+  @include media-query-xlarge() {
+    @include margin-bottom(1);
+  }
+}
+
+.mb-xl-2 {
+  @include media-query-xlarge() {
+    @include margin-bottom(2);
+  }
+}
+
+.mb-xl-3 {
+  @include media-query-xlarge() {
+    @include margin-bottom(3);
+  }
+}
+
+.mb-xl-4 {
+  @include media-query-xlarge() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-xl-5 {
+  @include media-query-xlarge() {
+    @include margin-bottom(5);
+  }
+}
+
+.mb-xl-6 {
+  @include media-query-xlarge() {
+    @include margin-bottom(5);
+  }
+}
+
+.mb-lg {
+  @include media-query-large() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-lg-0 {
+  @include media-query-large() {
+    @include margin-bottom(0);
+  }
+}
+
+.mb-lg-1 {
+  @include media-query-large() {
+    @include margin-bottom(1);
+  }
+}
+
+.mb-lg-2 {
+  @include media-query-large() {
+    @include margin-bottom(2);
+  }
+}
+
+.mb-lg-3 {
+  @include media-query-large() {
+    @include margin-bottom(3);
+  }
+}
+
+.mb-lg-4 {
+  @include media-query-large() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-lg-5 {
+  @include media-query-large() {
+    @include margin-bottom(5);
+  }
+}
+
+.mb-lg-6 {
+  @include media-query-large() {
+    @include margin-bottom(6);
+  }
+}
+
+.mb-md {
+  @include media-query-medium() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-md-0 {
+  @include media-query-medium() {
+    @include margin-bottom(0);
+  }
+}
+
+.mb-md-1 {
+  @include media-query-medium() {
+    @include margin-bottom(1);
+  }
+}
+
+.mb-md-2 {
+  @include media-query-medium() {
+    @include margin-bottom(2);
+  }
+}
+
+.mb-md-3 {
+  @include media-query-medium() {
+    @include margin-bottom(3);
+  }
+}
+
+.mb-md-4 {
+  @include media-query-medium() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-md-5 {
+  @include media-query-medium() {
+    @include margin-bottom(5);
+  }
+}
+
+.mb-md-6 {
+  @include media-query-medium() {
+    @include margin-bottom(6);
+  }
+}
+
+.mb-sm {
+  @include media-query-small() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-sm-0 {
+  @include media-query-small() {
+    @include margin-bottom(0);
+  }
+}
+
+.mb-sm-1 {
+  @include media-query-small() {
+    @include margin-bottom(1);
+  }
+}
+
+.mb-sm-2 {
+  @include media-query-small() {
+    @include margin-bottom(2);
+  }
+}
+
+.mb-sm-3 {
+  @include media-query-small() {
+    @include margin-bottom(3);
+  }
+}
+
+.mb-sm-4 {
+  @include media-query-small() {
+    @include margin-bottom(4);
+  }
+}
+
+.mb-sm-5 {
+  @include media-query-small() {
+    @include margin-bottom(5);
+  }
+}
+
+.mb-sm-6 {
+  @include media-query-small() {
+    @include margin-bottom(6);
+  }
+}
+
+.mt {
+  @include margin-top(4)
+}
+
+.mt-0 {
+  @include margin-top(0)
+}
+
+.mt-1 {
+  @include margin-top(1)
+}
+
+.mt-2 {
+  @include margin-top(2)
+}
+
+.mt-3 {
+  @include margin-top(3)
+}
+
+.mt-4 {
+  @include margin-top(4)
+}
+
+.mt-5 {
+  @include margin-top(5)
+}
+
+.mt-6 {
+  @include margin-top(6)
+}
+
+.mt-7 {
+  @include margin-top(7)
+}
+
+.mt-8 {
+  @include margin-top(8)
+}
+
+.mt-9 {
+  @include margin-top(9)
+}
+
+.mt-10 {
+  @include margin-top(10)
+}
+
+.mt-xl {
+  @include media-query-xlarge() {
+    @include margin-top(4);
+  }
+}
+
+.mt-xl-0 {
+  @include media-query-xlarge() {
+    @include margin-top(0);
+  }
+}
+
+.mt-xl-1 {
+  @include media-query-xlarge() {
+    @include margin-top(1);
+  }
+}
+
+.mt-xl-2 {
+  @include media-query-xlarge() {
+    @include margin-top(2);
+  }
+}
+
+.mt-xl-3 {
+  @include media-query-xlarge() {
+    @include margin-top(3);
+  }
+}
+
+.mt-xl-4 {
+  @include media-query-xlarge() {
+    @include margin-top(4);
+  }
+}
+
+.mt-xl-5 {
+  @include media-query-xlarge() {
+    @include margin-top(5);
+  }
+}
+
+.mt-xl-6 {
+  @include media-query-xlarge() {
+    @include margin-top(6);
+  }
+}
+
+.mt-lg {
+  @include media-query-large() {
+    @include margin-top(4);
+  }
+}
+
+.mt-lg-0 {
+  @include media-query-large() {
+    @include margin-top(0);
+  }
+}
+
+.mt-lg-1 {
+  @include media-query-large() {
+    @include margin-top(1);
+  }
+}
+
+.mt-lg-2 {
+  @include media-query-large() {
+    @include margin-top(2);
+  }
+}
+
+.mt-lg-3 {
+  @include media-query-large() {
+    @include margin-top(3);
+  }
+}
+
+.mt-lg-4 {
+  @include media-query-large() {
+    @include margin-top(4);
+  }
+}
+
+.mt-lg-5 {
+  @include media-query-large() {
+    @include margin-top(5);
+  }
+}
+
+.mt-lg-6 {
+  @include media-query-large() {
+    @include margin-top(6);
+  }
+}
+
+.mt-md {
+  @include media-query-medium() {
+    @include margin-top(4);
+  }
+}
+
+.mt-md-0 {
+  @include media-query-medium() {
+    @include margin-top(0);
+  }
+}
+
+.mt-md-1 {
+  @include media-query-medium() {
+    @include margin-top(1);
+  }
+}
+
+.mt-md-2 {
+  @include media-query-medium() {
+    @include margin-top(2);
+  }
+}
+
+.mt-md-3 {
+  @include media-query-medium() {
+    @include margin-top(3);
+  }
+}
+
+.mt-md-4 {
+  @include media-query-medium() {
+    @include margin-top(4);
+  }
+}
+
+.mt-md-5 {
+  @include media-query-medium() {
+    @include margin-top(5);
+  }
+}
+
+.mt-md-6 {
+  @include media-query-medium() {
+    @include margin-top(6);
+  }
+}
+
+.mt-sm {
+  @include media-query-small() {
+    @include margin-top(4);
+  }
+}
+
+.mt-sm-0 {
+  @include media-query-small() {
+    @include margin-top(0);
+  }
+}
+
+.mt-sm-1 {
+  @include media-query-small() {
+    @include margin-top(1);
+  }
+}
+
+.mt-sm-2 {
+  @include media-query-small() {
+    @include margin-top(2);
+  }
+}
+
+.mt-sm-3 {
+  @include media-query-small() {
+    @include margin-top(3);
+  }
+}
+
+.mt-sm-4 {
+  @include media-query-small() {
+    @include margin-top(4);
+  }
+}
+
+.mt-sm-5 {
+  @include media-query-small() {
+    @include margin-top(5);
+  }
+}
+
+.mt-sm-6 {
+  @include media-query-small() {
+    @include margin-top(6);
+  }
+}
+
+.mf {
+  @include margin-float(4)
+}
+
+.mf-0 {
+  @include margin-float(0)
+}
+
+.mf-1 {
+  @include margin-float(1)
+}
+
+.mf-2 {
+  @include margin-float(2)
+}
+
+.mf-3 {
+  @include margin-float(3)
+}
+
+.mf-4 {
+  @include margin-float(4)
+}
+
+.mf-5 {
+  @include margin-float(5)
+}
+
+.mf-6 {
+  @include margin-float(6)
+}
+
+.mof {
+  @include margin-opposite-float(4)
+}
+
+.mof-0 {
+  @include margin-opposite-float(0)
+}
+
+.mof-1 {
+  @include margin-opposite-float(1)
+}
+
+.mof-2 {
+  @include margin-opposite-float(2)
+}
+
+.mof-3 {
+  @include margin-opposite-float(3)
+}
+
+.mof-4 {
+  @include margin-opposite-float(4)
+}
+
+.mof-5 {
+  @include margin-opposite-float(5)
+}
+
+.mof-6 {
+  @include margin-opposite-float(6)
+}

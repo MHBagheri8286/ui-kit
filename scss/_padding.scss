@@ -1,0 +1,231 @@
+$padding: 5px;
+
+@mixin padding($space) {
+  padding: $space * $padding !important;
+}
+
+@mixin padding-x($space) {
+  padding-left: $space * $padding !important;
+  padding-right: $space * $padding !important;
+}
+
+@mixin padding-y($space) {
+  padding-top: $space * $padding !important;
+  padding-bottom: $space * $padding !important;
+}
+
+@mixin padding-right($space) {
+  padding-right: $space * $padding !important;
+}
+
+@mixin padding-bottom($space) {
+  padding-bottom: $space * $padding !important;
+}
+
+@mixin padding-top($space) {
+  padding-top: $space * $padding !important;
+}
+
+@mixin padding-right($space) {
+  padding-right: $space * $padding !important;
+}
+
+@mixin padding-left($space) {
+  padding-left: $space * $padding !important;
+}
+
+@mixin padding-float($space) {
+  padding-#{$float}: $space * $padding !important;
+}
+
+@mixin padding-opposite-float($space) {
+  padding-#{$opposite-float}: $space * $padding !important;
+}
+
+.px-0 {
+  @include padding-x(0)
+}
+
+.px-1 {
+  @include padding-x(1)
+}
+
+.px-2 {
+  @include padding-x(2)
+}
+
+.px-xl-0 {
+  @include media-query-xlarge() {
+    @include padding-x(0);
+  }
+}
+
+.px-xl-1 {
+  @include media-query-xlarge() {
+    @include padding-x(1);
+  }
+}
+
+.px-xl-2 {
+  @include media-query-xlarge() {
+    @include padding-x(2);
+  }
+}
+
+.px-lg-0 {
+  @include media-query-large() {
+    @include padding-x(0);
+  }
+}
+
+.px-lg-1 {
+  @include media-query-large() {
+    @include padding-x(1);
+  }
+}
+
+.px-lg-2 {
+  @include media-query-large() {
+    @include padding-x(2);
+  }
+}
+
+.px-md-0 {
+  @include media-query-medium() {
+    @include padding-x(0);
+  }
+}
+
+.px-md-1 {
+  @include media-query-medium() {
+    @include padding-x(1);
+  }
+}
+
+.px-md-2 {
+  @include media-query-medium() {
+    @include padding-x(2);
+  }
+}
+
+.px-sm-0 {
+  @include media-query-small() {
+    @include padding-x(0);
+  }
+}
+
+.px-sm-1 {
+  @include media-query-small() {
+    @include padding-x(1);
+  }
+}
+
+.px-sm-2 {
+  @include media-query-small() {
+    @include padding-x(2);
+  }
+}
+
+.p {
+  @include padding((4))
+}
+
+.p-0 {
+  @include padding(0)
+}
+
+.p-1 {
+  @include padding(1)
+}
+
+.p-2 {
+  @include padding(2)
+}
+
+.p-3 {
+  @include padding(3)
+}
+
+.p-4 {
+  @include padding(4)
+}
+
+.p-5 {
+  @include padding(5)
+}
+
+.p-6 {
+  @include padding(6)
+}
+
+.p-xl-0 {
+  @include media-query-xlarge() {
+    @include padding(0);
+  }
+}
+
+.p-xl-1 {
+  @include media-query-xlarge() {
+    @include padding(1);
+  }
+}
+
+.p-xl-2 {
+  @include media-query-xlarge() {
+    @include padding(2);
+  }
+}
+
+.p-lg-0 {
+  @include media-query-large() {
+    @include padding(0);
+  }
+}
+
+.p-lg-1 {
+  @include media-query-large() {
+    @include padding(1);
+  }
+}
+
+.p-lg-2 {
+  @include media-query-large() {
+    @include padding(2);
+  }
+}
+
+.p-md-0 {
+  @include media-query-medium() {
+    @include padding(0);
+  }
+}
+
+.p-md-1 {
+  @include media-query-medium() {
+    @include padding(1);
+  }
+}
+
+.p-md-2 {
+  @include media-query-medium() {
+    @include padding(2);
+  }
+}
+
+.p-sm-0 {
+  @include media-query-small() {
+    @include padding(0);
+  }
+}
+
+.p-sm-1 {
+  @include media-query-small() {
+    @include padding(1);
+  }
+}
+
+.p-sm-2 {
+  @include media-query-small() {
+    @include padding(2);
+  }
+}

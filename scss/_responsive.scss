@@ -1,0 +1,499 @@
+@mixin padding-style($padding) {
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+@mixin col-style($space) {
+  $padding: 15px;
+
+  @if $space==0 {
+    $padding: 0px;
+  }
+
+  @if $space==1 {
+    $padding: 5px;
+  }
+
+  @else if $space==2 {
+    $padding: 10px;
+  }
+
+  @else if $space==3 {
+    $padding: 15px;
+  }
+
+  @else if $space==4 {
+    $padding: 30px;
+  }
+
+  &>.col-1-auto {
+    width: auto;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-1 {
+    width: 100%;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-2 {
+    width: 50%;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-3 {
+    width: 33.33333%;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-4 {
+    width: 25%;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-5 {
+    width: 20%;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-6 {
+    width: 16.66666%;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-7 {
+    width: 14.28%;
+    @include padding-style($padding);
+  }
+
+  &>.col-1-10 {
+    width: 10%;
+    @include padding-style($padding);
+  }
+
+  &>.col-9-40 {
+    width: calc((9 / 40) * 100%);
+    @include padding-style($padding);
+  }
+
+  &>.col-2-7 {
+    width: 28.56%;
+    @include padding-style($padding);
+  }
+
+  &>.col-2-3 {
+    width: 66.66666%;
+    @include padding-style($padding);
+  }
+
+  &>.col-2-5 {
+    width: 40%;
+    @include padding-style($padding);
+  }
+
+  &>.col-3-5 {
+    width: 60%;
+    @include padding-style($padding);
+  }
+
+  &>.col-3-4 {
+    width: 75%;
+    @include padding-style($padding);
+  }
+
+  &>.col-3-20 {
+    width: 15%;
+    @include padding-style($padding);
+  }
+
+  &>.col-17-20 {
+    width: 85%;
+    @include padding-style($padding);
+  }
+
+  &>.col-14-20 {
+    width: 70%;
+    @include padding-style($padding);
+  }
+
+  &>.col-4-5 {
+    width: 80%;
+    @include padding-style($padding);
+  }
+
+  &>.col-5-18 {
+    width: 30%;
+    @include padding-style($padding);
+  }
+
+  &>.col-xl-1-1 {
+    @include media-query-xlarge() {
+      width: 100%;
+    }
+  }
+
+  &>.col-xl-1-2 {
+    @include media-query-xlarge() {
+      width: 50%;
+    }
+  }
+
+  &>.col-xl-1-3 {
+    @include media-query-xlarge() {
+      width: 33.33333%;
+    }
+  }
+
+  &>.col-xl-1-4 {
+    @include media-query-xlarge() {
+      width: 25%;
+    }
+  }
+
+  &>.col-xl-1-6 {
+    @include media-query-xlarge() {
+      width: 16.66666%;
+    }
+  }
+
+  &>.col-xl-2-3 {
+    @include media-query-xlarge() {
+      width: 66.66666%;
+    }
+  }
+
+  &>.col-lg-1-auto {
+    @include media-query-small() {
+      width: auto;
+    }
+  }
+
+  &>.col-lg-1-1 {
+    @include media-query-large() {
+      width: 100%;
+    }
+  }
+
+  &>.col-lg-1-2 {
+    @include media-query-large() {
+      width: 50%;
+    }
+  }
+
+  &>.col-lg-1-3 {
+    @include media-query-large() {
+      width: 33.33333%;
+    }
+  }
+
+  &>.col-lg-1-4 {
+    @include media-query-large() {
+      width: 25%;
+    }
+  }
+
+  &>.col-lg-1-6 {
+    @include media-query-large() {
+      width: 16.66666%;
+    }
+  }
+
+  &>.col-lg-2-3 {
+    @include media-query-large() {
+      width: 66.66666%;
+    }
+  }
+
+  &>.col-lg-2-5 {
+    @include media-query-large() {
+      width: 40%;
+    }
+  }
+
+  &>.col-lg-3-4 {
+    @include media-query-large() {
+      width: 75%;
+    }
+  }
+
+  &>.col-lg-3-5 {
+    @include media-query-large() {
+      width: 60%;
+    }
+  }
+
+  &>.col-md-1-auto {
+    @include media-query-small() {
+      width: auto;
+    }
+  }
+
+  &>.col-md-1-1 {
+    @include media-query-medium() {
+      width: 100%;
+    }
+  }
+
+  &>.col-md-1-2 {
+    @include media-query-medium() {
+      width: 50%;
+    }
+  }
+
+  &>.col-md-1-3 {
+    @include media-query-medium() {
+      width: 33.33333%;
+    }
+  }
+
+  &>.col-md-1-4 {
+    @include media-query-medium() {
+      width: 25%;
+    }
+  }
+
+  &>.col-md-1-5 {
+    @include media-query-medium() {
+      width: 20%;
+    }
+  }
+
+  &>.col-md-2-3 {
+    @include media-query-medium() {
+      width: 66.66666%;
+    }
+  }
+
+  &>.col-md-2-5 {
+    @include media-query-medium() {
+      width: 40%;
+    }
+  }
+
+  &>.col-md-3-5 {
+    @include media-query-medium() {
+      width: 60%;
+    }
+  }
+
+  &>.col-sm-1-1 {
+    @include media-query-small() {
+      width: 100%;
+    }
+  }
+
+  &>.col-sm-1-auto {
+    @include media-query-small() {
+      width: auto;
+    }
+  }
+
+  &>.col-sm-1-2 {
+    @include media-query-small() {
+      width: 50%;
+    }
+  }
+
+  &>.col-sm-1-3 {
+    @include media-query-small() {
+      width: 33.33333%;
+    }
+  }
+
+  &>.col-sm-1-4 {
+    @include media-query-small() {
+      width: 25%;
+    }
+  }
+
+  &>.col-sm-2-3 {
+    @include media-query-small() {
+      width: 66.66666%;
+    }
+  }
+
+  &>.col-sm-2-5 {
+    @include media-query-small() {
+      width: 40%;
+    }
+  }
+
+  &>.col-sm-3-5 {
+    @include media-query-small() {
+      width: 60%;
+    }
+  }
+}
+
+.row {
+  position: relative;
+  margin: 0px -15px;
+  flex-wrap: wrap;
+  @include col-style(3);
+
+  &.spa-0 {
+    margin: 0px;
+    @include col-style(0);
+  }
+
+  &.spa-1 {
+    margin: 0px -5px;
+    @include col-style(1);
+  }
+
+  &.spa-2 {
+    margin: 0px -10px;
+    @include col-style(2);
+  }
+
+  &.spa-3 {
+    margin: 0px -15px;
+    @include col-style(3);
+  }
+
+  &.spa-4 {
+    margin: 0px -30px;
+    @include col-style(4);
+  }
+
+  &.spa-sm-0 {
+    @include media-query-small() {
+      margin: 0px;
+      @include col-style(0);
+    }
+  }
+
+  &.spa-sm-1 {
+    @include media-query-small() {
+      margin: 0px -5px;
+      @include col-style(1);
+    }
+  }
+
+  &.spa-sm-2 {
+    @include media-query-small() {
+      margin: 0px -10px;
+      @include col-style(2);
+    }
+  }
+
+  &.spa-md-0 {
+    @include media-query-medium() {
+      margin: 0px;
+      @include col-style(0);
+    }
+  }
+
+  &.spa-md-1 {
+    @include media-query-medium() {
+      margin: 0px -5px;
+      @include col-style(1);
+    }
+  }
+
+  &.spa-md-2 {
+    @include media-query-medium() {
+      margin: 0px -10px;
+      @include col-style(2);
+    }
+  }
+
+  &.spa-lg-0 {
+    @include media-query-large() {
+      margin: 0px;
+      @include col-style(0);
+    }
+  }
+
+  &.spa-lg-1 {
+    @include media-query-large() {
+      margin: 0px -5px;
+      @include col-style(1);
+    }
+  }
+
+  &.spa-lg-2 {
+    @include media-query-large() {
+      margin: 0px -10px;
+      @include col-style(2);
+    }
+  }
+
+  .form-group {
+    margin: 0;
+    margin-bottom: 25px;
+    flex-grow: 1;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.flex-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+.column-direction {
+  flex-direction: column;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}

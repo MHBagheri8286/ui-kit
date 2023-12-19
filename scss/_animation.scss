@@ -1,0 +1,33 @@
+@keyframes rotate {
+  from {
+    @include rotate(0);
+  }
+
+  to {
+    @include rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes width {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 100%;
+  }
+}

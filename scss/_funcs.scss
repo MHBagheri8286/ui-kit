@@ -1,0 +1,11 @@
+@function get-value-by-direction($ltr-value, $rtl-value) {
+  @if ($direction==rtl) {
+    @return $rtl-value;
+  }
+  @return $ltr-value;
+}
+
+@function font-size($coef: 1) {
+  $base: 0.75rem;
+  @return ($base * $coef);
+}
